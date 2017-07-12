@@ -1,2 +1,13 @@
 
+<strong>Name:</strong>
 <h1><%= @artist.name %></h1>
+
+<% if @artist.songs.any? %>
+  <ul>
+    <% @artist.songs.each do |song| %>
+      <li><%= song.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no songs for this artist.</p>
+<% end %>
